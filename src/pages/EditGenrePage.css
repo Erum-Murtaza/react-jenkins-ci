@@ -1,0 +1,87 @@
+.edit-genre-form-container {
+  background: #f8f4ec;
+  padding: 20px;
+  border-radius: 12px;
+
+  max-width: 700px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.edit-genre-form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+}
+
+.edit-genre-form-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.edit-genre-form-container input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.item-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.remove-item {
+  background: none;
+  color: red;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-item-btn {
+  margin-top: 10px;
+  background: none;
+  color: black;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.cancel-btn {
+  background: #aaa;
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #e07b00;
+  padding: 12px 30px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.heading11 {
+  margin-left: 80px;
+  margin-top: 20px;
+  color: #e07b00;
+}

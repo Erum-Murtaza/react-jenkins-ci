@@ -1,0 +1,129 @@
+.add-genre-container {
+  background-color: #f8f4ec;
+  min-height: 100vh;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+.header-section {
+  padding-bottom: 30px;
+}
+
+.main-header {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.add-genre-content {
+  max-width: 600px;
+  background-color: #f8f4ec;
+  border-radius: 12px;
+
+  margin-left: 30px;
+}
+
+.add-genre-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.genre-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.genre-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.genre-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.genre-form input:focus {
+  outline: none;
+  border-color: #e07b00;
+  background-color: #fff;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.genre-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #e07b00;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c96b00;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .add-genre-container {
+    padding: 15px;
+  }
+
+  .add-genre-content {
+    padding: 20px;
+  }
+
+  .genre-form-buttons {
+    justify-content: space-between;
+  }
+}
+.heading22 {
+  color: #e07b00;
+  margin-left: 25px;
+  margin-bottom: 30px;
+}

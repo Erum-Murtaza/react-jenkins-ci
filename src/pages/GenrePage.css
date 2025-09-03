@@ -1,0 +1,61 @@
+/* GenrePage.css */
+
+.genre-page {
+  margin: 0;
+
+  min-height: 100vh;
+
+  background-color: none;
+}
+
+.genre-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+
+
+}
+
+.genre-heading {
+  font-size: 2rem;
+  color: orange;
+  margin-left: 150px;
+}
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 150px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.genre-card {
+  background-color: #f5af46;
+  padding: 15px;
+  border-radius: 6px;
+  width: auto;
+  height: 250px;
+  color: white;
+  font-weight: bold;
+}
+
+.add-genre-btn {
+  padding: 15px 20px;
+  font-size: 1rem;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 150px;
+}
+
+.add-genre-btn:hover {
+  background-color: #e07b00;
+}
+
+/* Keep your existing upload-form and modal styles if needed */

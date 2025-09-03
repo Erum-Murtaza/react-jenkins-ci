@@ -1,0 +1,78 @@
+/* GenreCard.css */
+.genre-card {
+  background: #eca246;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 15px 12px 20px; /* Slightly reduced padding */
+  margin: 5px;
+  width: 450px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px; /* Reduced from 15px */
+  padding-bottom: 6px; /* Reduced from 10px */
+  border-bottom: 0.1px solid rgb(255, 252, 252);
+}
+
+.card-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+.two-column-layout {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  margin-top: 5px; /* Added small top margin */
+}
+
+.subgenre-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  padding-left: 40px;
+  padding-top: 10px;
+}
+
+.subgenre-item {
+
+  color: white;
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0 0 2px 0; /* Only 2px bottom margin */
+  line-height: 2.8; /* Tight line spacing */
+}
+
+.subgenre-item:last-child {
+  margin-bottom: 0; /* Remove margin from last item */
+}
+
+.action-btn {
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.action-btn.edit {
+  background: none;
+  color: white;
+}
+
+.action-btn.edit:hover {
+  background: #e67e00;
+}

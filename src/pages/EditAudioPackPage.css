@@ -1,0 +1,363 @@
+/* Container for the entire edit page */
+.edit-audio-pack-container {
+    background-color: #f8f4ec;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Main heading style */
+.edit-audio-pack-container .main-header {
+    color: #f8f4ec;
+    font-size: 24px;
+
+}
+
+/* Form section styling */
+.edit-audio-pack-container .form-section {
+    background-color: transparent;
+   padding-left: 40px;
+    max-width: 900px;
+    margin: 0;
+}
+
+/* NEW: Flexbox container for rows of inputs */
+.edit-audio-pack-container .input-row {
+    display: flex;
+    gap: 20px; /* Adds space between items in the row */
+    margin-bottom: 30px; /* Adds space below the entire row */
+}
+
+/* Styles for individual input groups */
+.edit-audio-pack-container .input-group {
+    flex-grow: 1; /* NEW: Makes each input group take up equal space */
+    margin-bottom: 0; /* Override the old margin to prevent double spacing */
+}
+
+/* Styles for labels (black text) */
+.edit-audio-pack-container .input-group label {
+    color: rgb(56, 55, 55);
+    font-weight: 200px;
+    margin-bottom: 0px;
+    display: block;
+}
+
+/* Styles for all text input fields */
+.edit-audio-pack-container .input-group input[type="text"] {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: grey;
+    padding: 16px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Dropdown Styles --- */
+.edit-audio-pack-container .dropdown-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.edit-audio-pack-container .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-audio-pack-container .dropdown-container.active .dropdown-header {
+    border: 1px solid #ff5500;
+}
+
+.edit-audio-pack-container .dropdown-header-text {
+  
+    color: grey;
+}
+
+.edit-audio-pack-container .dropdown-arrow::after {
+    content: ' ';
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid gray;
+    transition: transform 0.3s ease;
+}
+
+.edit-audio-pack-container .dropdown-container.active .dropdown-arrow::after {
+    transform: rotate(180deg);
+}
+
+.edit-audio-pack-container .dropdown-list {
+    position: absolute;
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 100;
+    margin-top: 5px;
+    padding: 10px 0;
+}
+
+.edit-audio-pack-container .dropdown-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: grey;
+    font-weight: 500;
+}
+
+.edit-audio-pack-container .dropdown-list-item:hover {
+    background-color: #f5f5f5;
+}
+
+.edit-audio-pack-container .circle-checkbox,
+.edit-audio-pack-container .circle-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.edit-audio-pack-container .circle-checkbox.checked,
+.edit-audio-pack-container .circle-radio.checked {
+    background-color: #ff5500;
+    border-color: #ff5500;
+}
+
+.edit-audio-pack-container .circle-radio.checked::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.edit-audio-pack-container .dropdown-list-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.edit-audio-pack-container .footer-button-clear {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #000000;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-audio-pack-container .footer-button-save {
+    background-color: #ff5500;
+    color: #ffffff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* --- End of Generic Dropdown Styles --- */
+
+/* --- Instrument Dropdown Specific Styles --- */
+.edit-audio-pack-container .dropdown-item-text {
+    flex-grow: 1;
+}
+
+.edit-audio-pack-container .dropdown-item-count {
+    color: #a0a0a0;
+    font-weight: normal;
+}
+/* --- End of Instrument Dropdown Specific Styles --- */
+
+/* --- BPM Dropdown Specific Styles --- */
+.edit-audio-pack-container .dropdown-list-sm {
+    padding: 10px;
+}
+
+.edit-audio-pack-container .dropdown-option {
+    display: flex; /* NEW: Use flexbox for alignment */
+    align-items: center; /* NEW: Vertically align items */
+    padding: 8px;
+    cursor: pointer;
+    color: #000000;
+    font-weight: 500;
+}
+
+.edit-audio-pack-container .dropdown-option:hover {
+    background-color: #f5f5f5;
+}
+
+.edit-audio-pack-container .bpm-input,
+.edit-audio-pack-container .bpm-input-range {
+    background-color: #f0f2f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.edit-audio-pack-container .bpm-input-range {
+    width: 60px;
+}
+
+.edit-audio-pack-container .range-separator {
+    margin: 0 5px;
+}
+/* --- End of BPM Dropdown Specific Styles --- */
+
+/* --- Key Dropdown Specific Styles --- */
+.edit-audio-pack-container .dropdown-list-lg {
+    padding: 0;
+}
+
+.edit-audio-pack-container .key-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+}
+
+.edit-audio-pack-container .key-tab-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000000;
+    position: relative;
+    font-size: 14px;
+}
+
+.edit-audio-pack-container .key-tab-button.active {
+    color: #ff5500;
+}
+
+.edit-audio-pack-container .key-tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff5500;
+}
+
+.edit-audio-pack-container .key-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+}
+
+.edit-audio-pack-container .key-button {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+
+.edit-audio-pack-container .key-button.selected {
+    background-color: #ff5500;
+    color: #ffffff;
+    border-color: #ff5500;
+}
+
+.edit-audio-pack-container .key-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 15px 15px 15px;
+}
+
+.edit-audio-pack-container .key-type-button {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+}
+/* --- End of Key Dropdown Specific Styles --- */
+
+/* Styles for the combined browse file component */
+.edit-audio-pack-container .browse-file-container {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.edit-audio-pack-container .browse-file-input {
+    flex-grow: 1;
+    border: none;
+    background-color: #ffffff;
+    color: #a0a0a0;
+    padding: 10px;
+    outline: none;
+    font-weight: bold;
+}
+
+.edit-audio-pack-container .browse-file-input:read-only {
+    background-color: #ffffff;
+    color: #a0a0a0;
+}
+
+.edit-audio-pack-container .browse-file-button {
+    background-color: #ff8547;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Styles for the Save Changes button */
+.edit-audio-pack-container .save-button {
+    background-color: #ff8547;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+/* Style for the Cancel button */
+.edit-audio-pack-container .cancel-button {
+    background-color: #606060;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Actions container for Cancel and Save buttons */
+.edit-audio-pack-container .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}

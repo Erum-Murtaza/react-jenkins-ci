@@ -1,0 +1,90 @@
+/* Sidebar.css (updated) */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: orange;
+  padding-left: 40px;
+  padding-top: 40px;
+
+  /* Removed border from here as it's not needed */
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-heading {
+  font-size: 1.5rem;
+  text-align: left; /* Aligns to the left to match the image */
+  margin-bottom: 30px; /* Reduced margin to tighten up the layout */
+  color: orange; /* Corrected to the primary orange color */
+  padding-left: 40px; /* Aligns with the links below */
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Increased gap for better spacing between buttons */
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: orange ; /* The icon and text color is orange */
+  text-decoration: none;
+  background-color: white; /* Fix: This sets the background to white */
+  border: 1px solid transparent; /* Fix: This creates the subtle gray border */
+  border-radius: 50px ; /* Keeps the pill shape */
+  outline: none; /* Fix: Removes the default black outline on focus/click */
+  transition: all 0.3s ease;
+  
+/* Adds a subtle shadow for a raised effect */
+}
+
+.sidebar-link:hover {
+  background: orange; 
+  background-color: orange; /* The light orange background color */
+  color: white; /* The orange text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);/* Changes background slightly on hover */
+  color: white; /* Keeps the orange text color */
+  /* Darkens the border on hover */
+}
+
+/* The active state will need to be applied via a prop in your component */
+.sidebar-link.active {
+  background-color: #eca246; /* Active background is orange */
+  color: white; /* Active text color is white */
+  border: 1px solid #eca246; /* Active border is also orange */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* The ::before pseudo-element for the vertical line is no longer needed to match the target image. You can remove the following section. */
+
+.sidebar-icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;  
+  background: transparent;
+  color: #b3b3b3;
+  border: none;
+  outline: none; /* Fix: Removes potential outline */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+margin-left: 40px;
+}
+

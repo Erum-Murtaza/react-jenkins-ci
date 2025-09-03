@@ -1,0 +1,130 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page layout */
+body,
+html,
+#root {
+  height: 100%;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f8f4ec;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding-left: 200px;
+
+}
+
+/* Left side - Login Form */
+.login-left {
+  
+  flex: 0 0 35%;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+  margin-bottom: 180px;
+  margin-left: 20px;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: orange;
+  text-align: center;
+  padding-left: 60px;
+}
+
+.login-left h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: black;
+  font-weight: bolder;
+}
+
+.input-group11 {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+
+
+.input-group11 input {
+  width: 120%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid black;
+
+  background-color: white;
+}
+
+.divider {
+  width: 100%;
+  max-width: 300px;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.login-left button {
+  width: 100%;
+  max-width: 300px;
+  padding: 17px;
+  background-color: orange;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  margin-top: 40px;
+  margin-left: 40px;
+  font-size: large;
+}
+
+.login-left button:hover {
+  background-color: #555;
+}
+
+.studio-image-wrapper {
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8f4ec;
+}
+
+.studio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  object-position: 100% center;
+ 
+}
+
+.login-left button:hover {
+  background-color: rgb(250, 106, 53); /* Darker orange on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+/* Style for disabled button */
+.login-left button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}

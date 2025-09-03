@@ -1,0 +1,875 @@
+/* AddAudioPackForm.css */
+
+/* Base Styles & Container */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f4ec; /* Matches the background color in the desired image */
+  line-height: 1.6;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.container {
+ /* Keep this max-width for the overall container */
+  margin: 0 auto; /* Center the container horizontally */
+  background: transparent; /* Assuming light background of body shows through */
+  margin-top: 0;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb-container {
+ 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  color: #fb923c; /* Set breadcrumb text color based on image */
+  font-size: 15px;
+  padding: 0 30px; /* Add padding here to align with form-section content */
+  box-sizing: border-box; /* Include padding in width calculation */
+  max-width: 1400px; /* Match container max-width for consistent layout */
+  margin-left: auto; /* For centering with max-width */
+  margin-right: auto; /* For centering with max-width */
+}
+
+.breadcrumb-audio-packs {
+  color: #f97316; /* Orange color for active/main breadcrumb */
+  font-weight: 600;
+}
+
+.breadcrumb-arrow {
+  height: 16px;
+  width: 16px;
+  stroke: currentColor; /* Inherits color from parent */
+}
+
+.breadcrumb-new-pack {
+  font-weight: 600;
+  color: #1f2937; /* Darker color for the current page */
+}
+
+/* Form Sections */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Consistent vertical spacing between form rows */
+  /* **Crucial: Padding for the entire form content** */
+  background-color: transparent; /* Assuming form content has a white background */
+  /* Subtle shadow for the form area */
+  max-width: 1400px; /* Match container max-width for consistent layout */
+  margin: 0 auto; /* Center the form section itself */
+  margin-bottom: 40px; 
+  margin-top: 50px;/* Space below the form section before other content if any */
+}
+
+.form-row {
+  display: grid;
+  gap: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;/* Horizontal gap between input groups within a row */
+}
+
+/* Specific grid layouts for each row - CRITICAL FOR ALIGNMENT */
+.form-row.first-input-row {
+    grid-template-columns: 1fr 1fr; /* Equal width for Audio Pack Name and Upload Cover Photo */
+}
+
+.form-row.second-input-row {
+    /* Adjusted fractions to make Sample BPM smaller */
+    grid-template-columns: 1.6fr 1.1fr 0.4fr;
+}
+
+.form-row.description-row {
+    grid-template-columns: 1fr; /* Description spans full width */
+}
+
+/* Input Group General Styling (Applies to all input groups) */
+.input-group {
+  display: flex;
+  flex-direction: column; /* Stacks label above input */
+  gap: 8px; /* Space between label and input */
+}
+
+.input-group label {
+  color: #374151;
+  font-size: 14.5px; /* **Ensures consistent label size for all labels** */
+  font-weight: 600;
+  margin-bottom: 2px;
+  white-space: nowrap; /* Prevents labels from wrapping */
+  text-align: left;
+  line-height: 1.2; /* Ensures consistent vertical spacing for label text */
+}
+
+/* General Input Styling (text, textarea, select) */
+.text-input,
+.textarea-input,
+.select-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #4b5563;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.form-header-container {
+padding-left: 40px;
+  margin-left: 60px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.form-main-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: orange;
+  margin: 0;
+  padding: 0;
+}
+.text-input::placeholder,
+.textarea-input::placeholder {
+  color: #9ca3af;
+  opacity: 0.8;
+}
+
+.text-input:focus,
+.textarea-input:focus,
+.select-input:focus {
+  outline: none;
+  border-color: #f97316; /* Orange focus border */
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2); /* Orange focus glow */
+}
+
+.textarea-input {
+  resize: vertical;
+  min-height: 120px; /* Adjust as needed for description box height */
+}
+
+.select-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+/* Input with button combo (for file inputs) */
+.input-with-button {
+  display: flex;
+  border: 1px solid black; /* Matches the border style of other inputs */
+  overflow: hidden; /* Ensures button stays inside border */
+  width: 100%; /* Fills its parent input-group */
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 4px; /* Small border-radius for consistency */
+}
+
+.input-with-button:focus-within {
+  border-color: #f97316; /* Orange focus border */
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2); /* Orange focus glow */
+}
+
+.input-with-button .file-display-input {
+  border: none; /* No internal border */
+  outline: none;
+  flex-grow: 1; /* Takes up all available space */
+  padding: 12px 15px; /* Consistent padding */
+  background-color: transparent;
+}
+
+.input-with-button .browse-button {
+  border: none;
+  border-left: 1px solid #e5e7eb;
+  padding: 12px 20px; /* Adjusted padding for button */
+  background: linear-gradient(to right, #fb923c, #f97316); /* Orange gradient */
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* Prevents button from shrinking */
+  white-space: nowrap; /* Keeps "Browse Files" on one line */
+}
+
+.input-with-button .browse-button:hover {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Audio Files Section (Table-like structure) */
+.audio-files-section {
+  margin-top: 30px; /* Space above the audio files section */
+  border: 1px solid transparent ; /* Border around the entire audio files section */
+  /* Slightly rounded corners */
+  overflow: visible; /* CRITICAL: Allow dropdowns to overflow */
+  background-color: transparent; /* White background for the table area */
+}
+
+.audio-file-header {
+  display: grid;
+    /* REVISED: Adjusted grid-template-columns for better spacing in audio file rows */
+    /* Audio File Name and Select File are now explicitly wider to accommodate content */
+    /* Instruments, BPM, Key, Download, Type are equally sized dropdowns */
+  grid-template-columns: 2.2fr 2.6fr 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 50px; /* Increased Select File and Audio File Name width, balanced dropdowns */
+  gap: 20px;
+  background-color: transparent; /* Light gray background for header */
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  /* Padding for header cells */
+
+}
+
+.audio-file-row {
+  display: grid;
+    /* Must match header's grid-template-columns */
+  grid-template-columns: 2.2fr 2.6fr 1.1fr 1.1fr 1.1fr 1.1fr 1.1fr 50px; /* Increased Select File and Audio File Name width, balanced dropdowns */
+  gap: 20px;
+  align-items: center;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  /* Lighter border between rows */
+  padding-bottom: 10px;/* Padding for row cells */
+  position: relative; /* Needed for z-index to work correctly for rows */
+  z-index: 1; /* Ensure rows stack correctly */
+}
+.audio-file-row:hover {
+  z-index: 2; /* Bring hovered row to front to show dropdowns */
+}
+
+
+.audio-file-row:last-child {
+  border-bottom: none; /* No border on the last row */
+}
+
+.audio-file-field {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Remove Button */
+.remove-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.remove-button:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+  background-color: #fde2e2;
+}
+
+/* Custom Dropdown Styling (e.g., Instruments, Key, BPM, Download, Type) */
+.custom-dropdown-wrapper {
+  position: relative;
+  width: 100%; /* Ensures dropdown wrapper fills its grid cell */
+}
+
+.custom-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px; /* Consistent padding with other inputs */
+  border: 1px solid black; /* Consistent border with other inputs */
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  color: #4b5563;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 44px; /* Ensure consistent height with text inputs */
+  margin-top: 0;
+  border-radius: 4px; /* Small border-radius for consistency */
+}
+
+.custom-select-trigger.active {
+  border-color: #f97316; /* Orange focus border */
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2); /* Orange focus glow */
+}
+
+.select-arrow {
+  height: 20px;
+  width: 20px;
+  stroke: #6b7280;
+  transition: transform 0.2s ease;
+}
+
+.custom-select-trigger.active .select-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  position: absolute; /* CRITICAL: Allow dropdown to escape grid */
+  top: calc(100% + 5px);
+  left: 0;
+  /* REVISED: Increased min-width to ensure content fits, but keep max-width for responsiveness */
+  width: max-content; /* Adjust width to fit content */
+  min-width: 240px; /* Increased min-width to better accommodate dropdown options */
+  max-width: 320px; /* Prevents dropdown from becoming too wide */
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  z-index: 1000; /* CRITICAL: Ensure dropdown is on top */
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fadeInScale 0.2s ease-out;
+  transform-origin: top center;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Radio and Checkbox Styling (used in dropdowns like Instruments) */
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15.5px;
+  color: #374151;
+}
+
+.radio-option:last-child,
+.checkbox-option:last-child {
+  margin-bottom: 0;
+}
+
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-custom,
+.checkbox-custom {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  height: 20px;
+  width: 20px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 50%; /* For radio buttons */
+  transition: all 0.2s ease;
+}
+
+.checkbox-custom {
+  border-radius: 6px; /* For checkboxes */
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-custom {
+  background-color: #f97316; /* Orange when checked */
+  border-color: #f97316;
+}
+
+.radio-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-custom::after {
+  display: block;
+}
+
+.checkbox-option input[type="checkbox"]:checked ~ .checkbox-custom {
+  background-color: #f97316; /* Orange when checked */
+  border-color: #f97316;
+}
+
+.checkbox-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-option input[type="checkbox"]:checked ~ .checkbox-custom::after {
+  display: block;
+}
+
+.instrument-count {
+  margin-left: auto;
+  color: #6b7280;
+  font-size: 13.5px;
+  background-color: #eee;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+/* Key Dropdown Specifics */
+.key-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.key-tab-button {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #6b7280;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.key-tab-button.active {
+  color: #f97316; /* Orange when active */
+  border-color: #f97316;
+  font-weight: 600;
+}
+
+.key-tab-button:hover:not(.active) {
+  color: #ea580c;
+}
+
+.key-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.key-button {
+  padding: 10px 5px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 38px;
+  text-align: center;
+}
+
+.key-button:hover {
+  background-color: #e5e7eb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.key-button.selected {
+  background-color: #f97316; /* Orange when selected */
+  color: white;
+  border-color: #f97316;
+  box-shadow: 0 3px 8px rgba(249, 115, 22, 0.3);
+  transform: translateY(-2px);
+}
+
+.key-modes {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.key-mode-button {
+  padding: 12px 25px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.key-mode-button:hover {
+  background-color: #e5e7eb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.key-mode-button.active {
+  background-color: #f97316; /* Orange when active */
+  color: white;
+  border-color: #f97316;
+  box-shadow: 0 3px 8px rgba(249, 115, 22, 0.3);
+}
+
+/* New BPM Dropdown Specifics */
+.bpm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.bpm-options .radio-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.bpm-options .radio-option input[type="number"] {
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+.bpm-range-inputs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.bpm-range-inputs input {
+  width: 60px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.bpm-range-inputs span {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.bpm-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.clear-button {
+  background: none;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.clear-button:hover {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.save-button-small {
+  background: linear-gradient(to right, #fb923c, #f97316);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.2);
+}
+
+.save-button-small:hover {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  box-shadow: 0 3px 8px rgba(249, 115, 22, 0.3);
+}
+
+/* Add File Button */
+.add-file-button {
+  padding: 14px 28px;
+  background: linear-gradient(to right, #fb923c, #f97316);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+  display: block;
+  min-width: 200px;
+}
+
+.add-file-button:hover {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Save and Cancel Buttons */
+.save-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin-top: 40px;
+ 
+
+}
+
+.cancel-button {
+ padding: 16px 20px;
+  background-color: lightgray;
+  color: gray;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-right:0%;
+}
+
+
+
+.save-button {
+  padding: 16px 200px;
+  background: linear-gradient(to right, #f97316, #fb923c);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(251, 146, 60, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  align-content: center;
+  margin-right: 150px;
+}
+
+.save-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(251, 146, 60, 0.5);
+  background: linear-gradient(to right, #ea580c, #f97316);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .audio-file-header,
+  .audio-file-row {
+    /* Adjusted grid-template-columns for 1200px breakpoint */
+    grid-template-columns: 2.2fr 2.6fr 1.1fr 1.1fr 1.1fr 1.1fr 50px; /* Removed 'Type' column at this breakpoint, adjusted other columns */
+  }
+  .audio-file-header div:nth-child(7), /* Targets the 'Type' header */
+  .audio-file-row > div:nth-child(7) { /* Targets the 'Type' column in rows */
+    display: none;
+  }
+
+  /* Adjust grid columns for top rows to stack or reduce columns */
+  .form-row.first-input-row,
+  .form-row.second-input-row {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow stacking or fewer columns */
+  }
+
+  /* Description group should still take full width available to it */
+  .input-group.description-group {
+    max-width: 100%; /* Ensure it always takes full width of its parent */
+  }
+}
+
+@media (max-width: 1024px) {
+  .container,
+  .form-section,
+  .breadcrumb-container {
+    padding-left: 15px; /* Adjust container/form-section/breadcrumb padding for smaller screens */
+    padding-right: 15px;
+  }
+  .audio-file-header,
+  .audio-file-row {
+    padding: 12px 15px; /* Adjust audio file row/header padding */
+  }
+  /* Re-adjust audio file columns for smaller screens */
+  .audio-file-header,
+  .audio-file-row {
+    grid-template-columns: 2.2fr 2.6fr 1.1fr 1.1fr 50px; /* Fewer columns visible, adjusted existing */
+  }
+  .audio-file-header div:nth-child(5), /* Key header */
+  .audio-file-header div:nth-child(6), /* Download header */
+  .audio-file-row > div:nth-child(5), /* Key column */
+  .audio-file-row > div:nth-child(6) { /* Download column */
+    display: none;
+  }
+  /* Ensure top form rows stack on smaller screens too */
+  .form-row.first-input-row,
+  .form-row.second-input-row,
+  .form-row.description-row {
+      grid-template-columns: 1fr; /* Force single column stacking */
+      gap: 20px; /* Maintain vertical gap between elements in the stacked row */
+  }
+
+  /* General input group and field adjustments for smaller screens */
+  .input-group label {
+      font-size: 14px; /* Slightly smaller font for labels */
+  }
+  .text-input,
+  .textarea-input,
+  .select-input,
+  .custom-select-trigger,
+  .input-with-button .file-display-input,
+  .input-with-button .browse-button {
+      padding: 10px 12px; /* Slightly smaller padding */
+      font-size: 15px; /* Slightly smaller font for inputs */
+  }
+  .textarea-input {
+      min-height: 100px; /* Adjust min-height for mobile */
+  }
+  .input-group.description-group {
+      max-width: 100%; /* Ensure full width on mobile */
+      margin-right: 0;
+  }
+  .add-file-button {
+      margin-left: 0; /* Align with left edge of container */
+      width: 100%; /* Full width button */
+      box-sizing: border-box; /* Include padding/border in width */
+      padding: 12px 20px; /* Adjust padding */
+      font-size: 16px; /* Adjust font size */
+      border-radius: 8px; /* Slightly less rounded for better fit */
+  }
+  .save-button-container {
+      flex-direction: column; /* Stack save/cancel buttons */
+      gap: 15px; /* Gap between stacked buttons */
+      padding: 20px; /* Add padding to container */
+      box-sizing: border-box;
+  }
+  .save-button, .cancel-button {
+      width: 100%; /* Full width buttons */
+      padding: 12px 20px; /* Adjust padding */
+      font-size: 16px; /* Adjust font size */
+      border-radius: 8px; /* Match add file button */
+  }
+}
+
+@media (max-width: 768px) {
+  .audio-file-header,
+  .audio-file-row {
+    grid-template-columns: 1fr; /* Force stacking of all audio file fields */
+    padding: 15px;
+  }
+
+  .audio-file-header div {
+    display: block !important;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .audio-file-row > div {
+    display: block !important;
+    margin-top: 15px;
+  }
+  .audio-file-row > div:first-child {
+    margin-top: 0;
+  }
+
+  .audio-file-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .audio-file-field:last-child {
+    margin-bottom: 0;
+  }
+  .remove-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .audio-file-row {
+    position: relative;
+  }
+  .custom-dropdown-wrapper {
+    width: 100%;
+  }
+  .dropdown-content {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  .key-buttons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 5px;
+  }
+
+  .bpm-options .radio-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bpm-options .radio-option input[type="number"] {
+    margin-left: 0;
+    margin-top: 5px;
+    width: 100%;
+  }
+  .bpm-range-inputs {
+    flex-direction: row;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .bpm-range-inputs input {
+    width: auto;
+  }
+  .bpm-action-buttons {
+    justify-content: space-around;
+  }
+}
